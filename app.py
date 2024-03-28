@@ -29,7 +29,7 @@ def upload_file():
     if file.filename == '':
         return jsonify({'message': 'No selected file'})
 
-    filename = str(random.randint(10000, 99999)) + "_" + secure_filename(file.filename) 
+    filename = str(random.randint(10000, 99989)) + "_" + secure_filename(file.filename) 
     try:
         s3.upload_fileobj(file, S3_BUCKET_NAME, filename)
         return jsonify({'message': f'File uploaded successfully'})
